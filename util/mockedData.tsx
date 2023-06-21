@@ -1,4 +1,5 @@
-import { icon } from '@fortawesome/fontawesome-svg-core/import.macro'
+import {IconDefinition} from '@fortawesome/free-solid-svg-icons'
+import {icon} from "@fortawesome/fontawesome-svg-core/import.macro";
 
 export const items = [
     {
@@ -78,18 +79,37 @@ export const artists = [
     },
 ];
 
-// Icons = {
-//     market = "M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z",
-//     dashboard = "M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z",
-//     favourites = "M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z",
-//     trending = "M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z",
-//     collection = "M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z",
-//     walletOne = "M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z",
-//     walletTwo = "M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z",
-//     settings = "M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z",
-//     logout = "M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z"
-// };
+interface IconConfig {
+    icon: IconDefinition;
+}
 
-// export const Icons = {
-//     first: icon({name: 'user'})
-// }
+interface IconsConfig {
+    [key: string]: IconConfig;
+}
+
+export const Icons: IconsConfig = {
+    market: {
+        icon: icon({ name: 'user-secret' })
+    },
+    dashboard: {
+        icon: icon({ name: 'user-secret' })
+    },
+    favourites: {
+        icon: icon({ name: 'user-secret' })
+    },
+    trending: {
+        icon: icon({ name: 'twitter', style: 'brands' })
+    },
+    collection: {
+        icon: icon({ name: 'user-secret' })
+    },
+    wallet: {
+        icon: icon({ name: 'user-secret' })
+    },
+    settings: {
+        icon: icon({ name: 'user-secret' })
+    },
+    logout: {
+        icon: icon({ name: 'user-secret' })
+    }
+};

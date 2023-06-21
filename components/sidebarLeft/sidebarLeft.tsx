@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {icon} from "@fortawesome/fontawesome-svg-core/import.macro";
-// import {Icons} from "../../util/mockedData";
+import {Icons} from "../../util/mockedData";
 
 interface SidebarItemProps {
     text: string;
@@ -34,10 +33,10 @@ class SidebarItem extends Component<SidebarItemProps> {
                                 viewBox="0 0 20 20"
                                 fill="currentColor"
                             >
-                                {/*{Icons[text]()}*/}
+                                <FontAwesomeIcon icon={Icons[text].icon} />
                             </svg>
                         </span>
-                        {/*{text}*/}
+                        {text}
                     </a>
                 </li>
             </>
@@ -65,7 +64,7 @@ export default function SidebarLeft() {
                 <hr className="mb-5 text-zinc-700"/>
                 <a href="#" className="py-2 flex items-center  text-zinc-500">
                     <span className="bg-white w-8 h-8 grid place-items-center mr-2 rounded-md">
-                        <FontAwesomeIcon icon={icon({name: 'user-secret'})}/>
+                        <FontAwesomeIcon icon={Icons.logout.icon} />
                     </span>
                     Logout
                 </a>
