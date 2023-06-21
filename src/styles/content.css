@@ -1,0 +1,7 @@
+.text-color{
+ @apply text-zinc-500
+}
+
+.text-style{
+    @apply text-zinc-500
+}
