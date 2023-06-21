@@ -17,7 +17,7 @@ class ArtworkSelector extends Component<{ text: any, index: any }> {
     }
 }
 
-export default function Content() {
+export default function Contents() {
     return (
         <div className="">
             <h1 className="text-2xl font-bold px-3 mt-3">Dashboard</h1>
