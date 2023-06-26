@@ -91,7 +91,7 @@ export const Icons: IconsConfig = {
     market: {
         icon: icon({ name: 'user-secret' })
     },
-    dashboard: {
+    index: {
         icon: icon({ name: 'user-secret' })
     },
     favourites: {

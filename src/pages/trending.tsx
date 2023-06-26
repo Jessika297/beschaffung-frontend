@@ -1,20 +1,17 @@
 import SidebarRight from "../../components/sidebarRight/sidebarRight";
 import SidebarLeft from "../../components/sidebarLeft/sidebarLeft";
-import Items from "../../components/items/items";
 import HeadSearch from "../../components/headSearch/headSearch";
-import Contents from "../../components/contents/contents";
 
-export default function Shop() {
+export default function Trending() {
     return (
         <>
-            <SidebarLeft/>
+            <SidebarLeft selectedIndex={3}/>
             <HeadSearch/>
 
             <div className="flex flex-col md:flex-row">
                 <div className="w-48 hidden lg:block shrink-0"/>
                 <div className=" grow ">
-                    <Contents/>
-                    <Items/>
+                    trending
                 </div>
                 <SidebarRight/>
             </div>
