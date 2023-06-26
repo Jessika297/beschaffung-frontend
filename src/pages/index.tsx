@@ -1,9 +1,9 @@
 import Head from "next/head";
-import HeadSearch from "../../components/headSearch/headSearch";
-import SidebarLeft from "../../components/sidebarLeft/sidebarLeft";
-import Contents from "../../components/contents/contents";
-import Items from "../../components/items/items";
-import SidebarRight from "../../components/sidebarRight/sidebarRight";
+import HeadSearch from "@/components/headSearch/headSearch";
+import SidebarLeft from "@/components/sidebarLeft/sidebarLeft";
+import Contents from "@/components/contents/contents";
+import Items from "@/components/items/items";
+import SidebarRight from "@/components/sidebarRight/sidebarRight";
 
 export default function Home() {
     return (

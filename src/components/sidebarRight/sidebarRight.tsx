@@ -1,4 +1,4 @@
-import {artists} from "../../util/mockedData";
+import {artists} from "@/util/mockedData";
 
 export default function SidebarRight() {
     return (

@@ -1,4 +1,4 @@
-import {artists, items} from "../../util/mockedData";
+import {artists, items} from "@/util/mockedData";
 import Countdown from "react-countdown";
 
 export default function Items() {

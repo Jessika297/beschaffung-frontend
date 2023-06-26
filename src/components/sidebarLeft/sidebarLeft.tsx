@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {Icons} from "../../util/mockedData";
+import {Icons} from "@/util/mockedData";
 import Link from "next/link";
 
 interface SidebarItemProps {
@@ -26,14 +26,7 @@ class SidebarItem extends Component<SidebarItemProps> {
                                 index === selectedIndex ? 'bg-fuchsia-600' : 'bg-zinc-800'
                             }`}
                         >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="h-5 w-5"
-                                viewBox="0 0 20 20"
-                                fill="currentColor"
-                            >
                                 <FontAwesomeIcon icon={Icons[text].icon}/>
-                            </svg>
                         </span>
                         {text}
                     </Link>
@@ -51,10 +44,10 @@ export default class SidebarLeft extends Component<{ selectedIndex: number }> {
                 <ul className="space-y-8">
                     {[
                         'market',
-                        'index',
+                        'dashboard',
                         'favourites',
                         'trending',
-                        'collection',
+                        'sale',
                         'wallet',
                         'settings',
                     ].map((key, index) => (

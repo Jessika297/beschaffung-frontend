@@ -1,8 +1,8 @@
-import SidebarRight from "../../components/sidebarRight/sidebarRight";
-import SidebarLeft from "../../components/sidebarLeft/sidebarLeft";
-import HeadSearch from "../../components/headSearch/headSearch";
+import SidebarRight from "@/components/sidebarRight/sidebarRight";
+import SidebarLeft from "@/components/sidebarLeft/sidebarLeft";
+import HeadSearch from "@/components/headSearch/headSearch";
 
-export default function Collection() {
+export default function Sale() {
     return (
         <>
             <SidebarLeft selectedIndex={4}/>

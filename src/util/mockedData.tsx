@@ -89,27 +89,45 @@ interface IconsConfig {
 
 export const Icons: IconsConfig = {
     market: {
-        icon: icon({ name: 'user-secret' })
+        icon: icon({name: 'store'})
     },
-    index: {
-        icon: icon({ name: 'user-secret' })
+    dashboard: {
+        icon: icon({name: 'house'})
     },
     favourites: {
-        icon: icon({ name: 'user-secret' })
+        icon: icon({name: 'star'})
     },
     trending: {
-        icon: icon({ name: 'twitter', style: 'brands' })
+        icon: icon({name: 'arrow-trend-up'})
     },
-    collection: {
-        icon: icon({ name: 'user-secret' })
+    sale: {
+        icon: icon({name: 'gift'})
     },
     wallet: {
-        icon: icon({ name: 'user-secret' })
+        icon: icon({name: 'wallet'})
     },
     settings: {
-        icon: icon({ name: 'user-secret' })
+        icon: icon({name: 'gear'})
     },
     logout: {
-        icon: icon({ name: 'user-secret' })
+        icon: icon({name: 'arrow-right-from-bracket'})
+    }
+};
+
+export const MoreIcons: IconsConfig = {
+    cart: {
+        icon: icon({name: 'cart-arrow-down'})
+    },
+    arrow: {
+        icon: icon({name: 'chevron-down'})
+    },
+    search: {
+        icon: icon({name: 'magnifying-glass'})
+    },
+    bars: {
+        icon: icon({name: 'bars'})
+    },
+    xmark: {
+        icon: icon({name: 'xmark'})
     }
 };
