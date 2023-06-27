@@ -111,6 +111,9 @@ export const Icons: IconsConfig = {
     },
     logout: {
         icon: icon({name: 'arrow-right-from-bracket'})
+    },
+    close: {
+        icon: icon({name: 'xmark'})
     }
 };
 

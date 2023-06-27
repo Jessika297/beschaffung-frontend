@@ -8,6 +8,11 @@ import MobileMenu from "@/components/mobileMenu/mobileMenu";
 export default function HeadSearch() {
     const [isSearchSelected, setIsSearchSelected] = useState(false)
     const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen)
+    }
+
     return (
         <>
             <div className="flex flex-wrap p-3 items-center sticky top-0 bg-zinc-900 h-fit md:h-16 z-30">
@@ -38,11 +43,10 @@ export default function HeadSearch() {
 
                 <div className="flex  mt-4 md:mt-0 order-3 md:order-2 w-full grow md:w-fit ">
                     <button className={`w-10 h-10 rounded-md bg-zinc-700 grid place-items-center mr-2 md:hidden`}
-                            onClick={() => setIsMenuOpen(!isMenuOpen)}
-                            onBlur={() => setIsMenuOpen(false)}>
+                            onClick={() => setIsMenuOpen(!isMenuOpen)}>
                         {isMenuOpen
                             ? <FontAwesomeIcon icon={MoreIcons.xmark.icon}/>
-                            : <FontAwesomeIcon icon={MoreIcons.bars.icon}/>}
+                            : <FontAwesomeIcon icon={MoreIcons.bars.icon} onClick={toggleMenu}/>}
                     </button>
                     <div className="relative grow md:max-w-lg">
                         <input
@@ -79,7 +83,7 @@ export default function HeadSearch() {
                     </div>
                 </div>
             </div>
-            <MobileMenu isMenuOpen={isMenuOpen}/>
+            <MobileMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen}/>
         </>
     );
 }
