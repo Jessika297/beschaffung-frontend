@@ -18,9 +18,10 @@ class SidebarItem extends Component<SidebarItemProps> {
                     {index === selectedIndex ? (
                         <div className="absolute -left-1 top-0 bg-fuchsia-600 w-2 h-8 rounded-full"/>
                     ) : null}
-                    <Link href={"/" + [text]} className={`pl-4 flex items-center capitalize ${
-                        index === selectedIndex ? 'text-white' : 'text-zinc-500'
-                    }`}>
+                    {text === "dashboard"
+                        ? <Link href={"/"} className={`pl-4 flex items-center capitalize ${
+                            index === selectedIndex ? 'text-white' : 'text-zinc-500'
+                        }`}>
                         <span
                             className={`bg-zinc-800 w-8 h-8 grid place-items-center mr-2 rounded-md ${
                                 index === selectedIndex ? 'bg-fuchsia-600' : 'bg-zinc-800'
@@ -28,8 +29,20 @@ class SidebarItem extends Component<SidebarItemProps> {
                         >
                                 <FontAwesomeIcon icon={Icons[text].icon}/>
                         </span>
-                        {text}
-                    </Link>
+                            {text}
+                        </Link>
+                        : <Link href={"/" + [text]} className={`pl-4 flex items-center capitalize ${
+                            index === selectedIndex ? 'text-white' : 'text-zinc-500'
+                        }`}>
+                        <span
+                            className={`bg-zinc-800 w-8 h-8 grid place-items-center mr-2 rounded-md ${
+                                index === selectedIndex ? 'bg-fuchsia-600' : 'bg-zinc-800'
+                            }`}
+                        >
+                                <FontAwesomeIcon icon={Icons[text].icon}/>
+                        </span>
+                            {text}
+                        </Link>}
                 </li>
             </>
         );
