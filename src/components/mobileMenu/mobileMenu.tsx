@@ -1,5 +1,4 @@
-import React, {Component} from "react";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import React from "react";
 import {Icons} from "@/util/mockedData";
 import Link from "next/link";
 
@@ -8,71 +7,62 @@ interface MobileItemProp {
     setIsMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-class MobileItem extends Component<MobileItemProp> {
-    render() {
-        const {text, setIsMenuOpen} = this.props;
-        const handleLogout = () => {
-            console.log('logged out')
-            setIsMenuOpen(false)
-        }
-        const switchLinks = () => {
-            switch (text) {
-                case "dashboard" :
-                    return <Link href={"/"} className={`rounded-md border flex flex-col w-[30vw] py-1`}
-                                 onClick={() => setIsMenuOpen(false)}>
-                        <FontAwesomeIcon icon={Icons[text].icon} className={`m-2 mb-1`}/>
-                        <p className={`m-2 uppercase text-center text-sm`}>{text}</p>
-                    </Link>
-                case "logout" :
-                    return <Link href={"/"} className={`rounded-md border flex flex-col w-[30vw] py-1`}
-                                 onClick={handleLogout}>
-                        <FontAwesomeIcon icon={Icons[text].icon} className={`m-2 mb-1`}/>
-                        <p className={`m-2 uppercase text-center text-sm`}>{text}</p>
-                    </Link>
-                case "close":
-                    return <span className={`rounded-md border flex flex-col w-[30vw] py-1`}>
-                            <button
-                                onClick={() => setIsMenuOpen(false)}>
-                                <FontAwesomeIcon icon={Icons[text].icon} className={`m-2 mb-1`}/>
-                                <p className={`m-2 uppercase text-center text-sm`}>{text}</p>
-                            </button>
-                    </span>
-                default:
-                    return <Link href={"/" + [text]} className={`rounded-md border flex flex-col w-[30vw] py-1`}
-                                 onClick={() => setIsMenuOpen(false)}>
-                        <FontAwesomeIcon icon={Icons[text].icon} className={`m-2 mb-1`}/>
-                        <p className={`m-2 uppercase text-center text-sm`}>{text}</p>
-                    </Link>
-            }
-        }
-        return (
-            <>
-                {switchLinks()}
-            </>
-        );
-    }
-}
+const MobileItem: React.FC<MobileItemProp> = ({text, setIsMenuOpen}) => {
+    const handleLogout = () => {
+        console.log('logged out');
+        setIsMenuOpen(false);
+    };
 
-export default function MobileMenu({isMenuOpen, setIsMenuOpen}: {
-    isMenuOpen: boolean,
-    setIsMenuOpen: React.Dispatch<React.SetStateAction<boolean>>
-}) {
+    const renderLink = () => (
+        <Link
+            href={["dashboard", "logout"].includes(text) ? "/" : `/${text}`}
+            className="rounded-md border flex flex-col w-[30vw] py-1"
+            onClick={() => text === "logout" ? handleLogout() : setIsMenuOpen(false)}
+        >
+            <div className={`m-2 mb-1`}> {Icons[text]} </div>
+            <p className="m-2 uppercase text-center text-sm">{text}</p>
+        </Link>
+    );
+
+    const renderButton = () => (
+        <span className={`rounded-md border flex flex-col w-[30vw] py-1`}>
+      <button onClick={() => setIsMenuOpen(false)}>
+        <div className={`m-2 mb-1`}> {Icons[text]} </div>
+        <p className={`m-2 uppercase text-center text-sm`}>{text}</p>
+      </button>
+    </span>
+    );
+
+    return <>{text === "close" ? renderButton() : renderLink()}</>;
+};
+
+const MobileMenu: React.FC<{
+    isMenuOpen: boolean;
+    setIsMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}> = ({isMenuOpen, setIsMenuOpen}) => {
+    const menuItems = [
+        "market",
+        "dashboard",
+        "favourites",
+        "trending",
+        "sale",
+        "wallet",
+        "settings",
+        "logout",
+        "close",
+    ];
+
     return (
-        <div className={`grid grid-cols-3 place-items-center gap-2 p-1md:hidden 
-        ${isMenuOpen ? '' : 'hidden'}`}>
-            {[
-                'market',
-                'dashboard',
-                'favourites',
-                'trending',
-                'sale',
-                'wallet',
-                'settings',
-                'logout',
-                'close'
-            ].map((key) => (
+        <div
+            className={`grid grid-cols-3 place-items-center gap-2 p-1md:hidden ${
+                isMenuOpen ? "" : "hidden"
+            }`}
+        >
+            {menuItems.map((key) => (
                 <MobileItem key={key} text={key} setIsMenuOpen={setIsMenuOpen}/>
             ))}
         </div>
     );
-}
+};
+
+export default MobileMenu;
