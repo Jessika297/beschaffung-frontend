@@ -1,7 +1,7 @@
 import {items} from "@/util/mockedData";
 import Countdown from "react-countdown";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faHardDrive, faMicrochip} from "@fortawesome/free-solid-svg-icons";
+import {faFan, faHardDrive, faMicrochip} from "@fortawesome/free-solid-svg-icons";
 import {differenceInDays, isBefore} from "date-fns";
 import React, {useState} from "react";
 
@@ -16,7 +16,24 @@ const Items: React.FC<ItemsProps> = ({homepage}) => {
     return (
         <ul className="p-1.5 flex flex-wrap">
             {items.map(
-                ({key, processor, storage, storageType, price, salePrice, title, saleUntil}) => {
+                ({
+                     graphicsFull,
+                     graphicsType,
+                     key,
+                     memory,
+                     moreInfo,
+                     picture,
+                     power,
+                     price,
+                     processor,
+                     processorFull,
+                     salePrice,
+                     saleUntil,
+                     storage,
+                     storageFull,
+                     storageType,
+                     title,
+                 }) => {
                     const daysUntilSale = saleUntil && differenceInDays(new Date(saleUntil), new Date());
                     const hasSaleDays = daysUntilSale && daysUntilSale > 1;
                     const isSaleUP = saleUntil && isBefore(new Date(), saleUntil);
@@ -66,6 +83,12 @@ const Items: React.FC<ItemsProps> = ({homepage}) => {
                                             <FontAwesomeIcon icon={faHardDrive}/>
                                             <span className=" ml-2 text-zinc-400" title={storageType}>
                                                       {storage} GB
+                                                    </span>
+                                        </div>
+                                        <div>
+                                            <FontAwesomeIcon icon={faFan}/>
+                                            <span className=" ml-2 text-zinc-400" title={storageType}>
+                                                      {graphicsType}
                                                     </span>
                                         </div>
                                     </div>
