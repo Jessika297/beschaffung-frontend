@@ -18,7 +18,7 @@ export default function Home() {
                 <div className="w-48 hidden lg:block shrink-0"/>
                 <div className=" grow ">
                     <Contents/>
-                    <Items/>
+                    <Items homepage={true}/>
                 </div>
                 <SidebarRight/>
             </div>

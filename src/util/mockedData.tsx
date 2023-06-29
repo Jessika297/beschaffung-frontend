@@ -20,7 +20,8 @@ interface Item {
     price: number;
     salePrice: number | null;
     title: string;
-    saleUntil: Date;
+    moreInfo: string;
+    saleUntil: Date | null;
 }
 
 export const items: Item[] = [
@@ -32,6 +33,7 @@ export const items: Item[] = [
         price: 899,
         salePrice: 799,
         title: 'Fujitsu Esprimo Q920',
+        moreInfo: 'best PC ever',
         saleUntil: new Date(2023, 6, 1),
     },
     {
@@ -42,6 +44,7 @@ export const items: Item[] = [
         price: 659,
         salePrice: 23,
         title: 'Toshiba Libretto U100',
+        moreInfo: 'best PC ever',
         saleUntil: new Date(2023, 6, 2),
     },
     {
@@ -52,6 +55,7 @@ export const items: Item[] = [
         price: 999,
         salePrice: 995,
         title: 'Chieftec LG-01B-OP',
+        moreInfo: 'best PC ever',
         saleUntil: new Date(2023, 5, 30),
     },
     {
@@ -62,6 +66,7 @@ export const items: Item[] = [
         price: 1999,
         salePrice: 55,
         title: 'Geekom Mini Air',
+        moreInfo: 'best PC ever',
         saleUntil: new Date(2023, 6, 4),
     },
     {
@@ -72,6 +77,7 @@ export const items: Item[] = [
         price: 2999,
         salePrice: 99,
         title: 'AZZA Pyramid 804',
+        moreInfo: 'best PC ever',
         saleUntil: new Date(2023, 6, 2),
     },
     {
@@ -82,7 +88,8 @@ export const items: Item[] = [
         price: 999,
         salePrice: 759,
         title: 'Alienware Aurora R15',
-        saleUntil: new Date(2023, 5, 29),
+        moreInfo: 'best PC ever',
+        saleUntil: null,
     },
 ];
 
