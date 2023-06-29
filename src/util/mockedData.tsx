@@ -18,7 +18,6 @@ interface Item {
     storage: number;
     storageType: string;
     price: number;
-    sale: boolean;
     salePrice: number | null;
     title: string;
     saleUntil: Date;
@@ -31,7 +30,6 @@ export const items: Item[] = [
         storage: 256,
         storageType: 'SSD',
         price: 899,
-        sale: true,
         salePrice: 799,
         title: 'Fujitsu Esprimo Q920',
         saleUntil: new Date(2023, 6, 1),
@@ -42,7 +40,6 @@ export const items: Item[] = [
         storage: 128,
         storageType: 'HDD',
         price: 659,
-        sale: false,
         salePrice: 23,
         title: 'Toshiba Libretto U100',
         saleUntil: new Date(2023, 6, 2),
@@ -53,7 +50,6 @@ export const items: Item[] = [
         storage: 256,
         storageType: 'HDD',
         price: 999,
-        sale: true,
         salePrice: 995,
         title: 'Chieftec LG-01B-OP',
         saleUntil: new Date(2023, 5, 30),
@@ -64,7 +60,6 @@ export const items: Item[] = [
         storage: 1028,
         storageType: 'HDD',
         price: 1999,
-        sale: false,
         salePrice: 55,
         title: 'Geekom Mini Air',
         saleUntil: new Date(2023, 6, 4),
@@ -75,7 +70,6 @@ export const items: Item[] = [
         storage: 8,
         storageType: 'SSD',
         price: 2999,
-        sale: true,
         salePrice: 99,
         title: 'AZZA Pyramid 804',
         saleUntil: new Date(2023, 6, 2),
@@ -86,7 +80,6 @@ export const items: Item[] = [
         storage: 256,
         storageType: 'SSD',
         price: 999,
-        sale: true,
         salePrice: 759,
         title: 'Alienware Aurora R15',
         saleUntil: new Date(2023, 5, 29),

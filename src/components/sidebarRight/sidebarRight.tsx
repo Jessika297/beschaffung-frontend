@@ -8,7 +8,7 @@ export default function SidebarRight() {
         <div className="p-3 md:w-72 md:sticky md:top-16 shrink-0 h-full">
             <h2 className="text-xl font-semibold">Top Items</h2>
             <ul className="mt-3 space-y-3">
-                {items.map(({key, processor, storage, storageType, price, sale, salePrice, title}) => (
+                {items.map(({key, processor, storage, storageType, price, salePrice, title}) => (
                     <li className="bg-zinc-800 rounded-md p-2 grid grid-cols-[20%_80%] shadow-lg"
                         key={title + key}>
                         <div
@@ -28,7 +28,7 @@ export default function SidebarRight() {
                 </span>
                                 <span>
                   <FontAwesomeIcon icon={faMoneyBill1Wave}/>
-                  <p className="text-sm text-zinc-400">{sale ? salePrice : price} €</p>
+                  <p className="text-sm text-zinc-400">{salePrice ? salePrice : price} €</p>
                 </span>
                             </div>
                         </div>

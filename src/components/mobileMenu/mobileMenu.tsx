@@ -19,7 +19,7 @@ const MobileItem: React.FC<MobileItemProp> = ({text, setIsMenuOpen}) => {
             className="rounded-md border flex flex-col w-[30vw] py-1"
             onClick={() => text === "logout" ? handleLogout() : setIsMenuOpen(false)}
         >
-            <div className={`m-2 mb-1`}> {Icons[text]} </div>
+            <div className={`m-2 mb-1 text-center`}> {Icons[text]} </div>
             <p className="m-2 uppercase text-center text-sm">{text}</p>
         </Link>
     );
