@@ -1,6 +1,7 @@
 import {items} from "@/util/mockedData";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faHardDrive, faMicrochip, faMoneyBill1Wave} from '@fortawesome/free-solid-svg-icons';
+import Link from "next/link";
 
 
 export default function SidebarRight() {
@@ -40,7 +41,8 @@ export default function SidebarRight() {
                 <div className="z-10 relative">
                     <h2 className="text-white font-semibold">Get our full Service</h2>
                     <p className="text-white/50 text-sm mt-1">We recycle your hardware after it's expanded.</p>
-                    <button className="bg-white w-full rounded-md h-12 text-gray-900 font-semibold mt-2">Get the deal
+                    <button className="bg-white w-full rounded-md h-12 text-gray-900 font-semibold mt-2">
+                        <Link href={'/service'}>Get the deal</Link>
                     </button>
                 </div>
             </div>

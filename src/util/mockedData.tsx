@@ -1,7 +1,7 @@
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {
     faArrowRightFromBracket,
-    faArrowTrendUp,
+    faBellConcierge,
     faGear,
     faGift,
     faHouse,
@@ -94,7 +94,7 @@ export const Icons: IconInterface = {
     market: <FontAwesomeIcon icon={faStore}/>,
     dashboard: <FontAwesomeIcon icon={faHouse}/>,
     favourites: <FontAwesomeIcon icon={faStar}/>,
-    trending: <FontAwesomeIcon icon={faArrowTrendUp}/>,
+    service: <FontAwesomeIcon icon={faBellConcierge}/>,
     sale: <FontAwesomeIcon icon={faGift}/>,
     wallet: <FontAwesomeIcon icon={faWallet}/>,
     settings: <FontAwesomeIcon icon={faGear}/>,

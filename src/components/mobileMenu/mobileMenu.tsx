@@ -44,7 +44,7 @@ const MobileMenu: React.FC<{
         "market",
         "dashboard",
         "favourites",
-        "trending",
+        "service",
         "sale",
         "wallet",
         "settings",
