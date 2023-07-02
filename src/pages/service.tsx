@@ -80,7 +80,7 @@ const Service = () => {
 
     return (
         <>
-            <SidebarLeft selectedIndex={3}/>
+            <SidebarLeft selectedIndex={2}/>
             <HeadSearch/>
 
             <div className="flex flex-col md:flex-row">

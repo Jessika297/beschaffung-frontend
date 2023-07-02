@@ -5,7 +5,7 @@ import HeadSearch from "@/components/headSearch/headSearch";
 export default function Settings() {
     return (
         <>
-            <SidebarLeft selectedIndex={6}/>
+            <SidebarLeft selectedIndex={5}/>
             <HeadSearch/>
 
             <div className="flex flex-col md:flex-row">

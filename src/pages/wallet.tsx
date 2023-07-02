@@ -5,7 +5,7 @@ import HeadSearch from "@/components/headSearch/headSearch";
 export default function Wallet() {
     return (
         <>
-            <SidebarLeft selectedIndex={5}/>
+            <SidebarLeft selectedIndex={4}/>
             <HeadSearch/>
 
             <div className="flex flex-col md:flex-row">

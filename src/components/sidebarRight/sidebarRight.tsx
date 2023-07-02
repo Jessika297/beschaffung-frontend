@@ -9,23 +9,42 @@ export default function SidebarRight() {
         <div className="p-3 md:w-72 md:sticky md:top-16 shrink-0 h-full">
             <h2 className="text-xl font-semibold">Top Items</h2>
             <ul className="mt-3 space-y-3">
-                {items.map(({key, processor, storage, storageType, price, salePrice, title}) => (
+                {items.map(({
+                                graphicsDescription,
+                                graphicsName,
+                                id,
+                                ramSize,
+                                moreInfo,
+                                pictureURL,
+                                powerAdapterName,
+                                powerAdapterConsumption,
+                                price,
+                                processorName,
+                                processorDescription,
+                                salePrice,
+                                saleUntil,
+                                storageSize,
+                                storageDescription,
+                                storageType,
+                                itemTitle,
+                                isAvailable
+                            }) => (
                     <li className="bg-zinc-800 rounded-md p-2 grid grid-cols-[20%_80%] shadow-lg"
-                        key={title + key}>
+                        key={itemTitle + id}>
                         <div
                             className="w-10 h-10 bg-gradient-to-tr from-fuchsia-600 to-violet-600 grid place-items-center rounded-md font-bold text-white text-2xl">
-                            {key}
+                            {id}
                         </div>
                         <div className="ml-3">
-                            <h3 className="font-semibold">{title}</h3>
+                            <h3 className="font-semibold">{itemTitle}</h3>
                             <div className="grid grid-cols-3 text-center">
                 <span>
                   <FontAwesomeIcon icon={faMicrochip}/>
-                  <p className="text-sm text-zinc-400">{processor}</p>
+                  <p className="text-sm text-zinc-400">{processorName}</p>
                 </span>
                                 <span>
                   <FontAwesomeIcon icon={faHardDrive}/>
-                  <p className="text-sm text-zinc-400" title={storageType}>{storage}</p>
+                  <p className="text-sm text-zinc-400" title={storageType}>{storageSize}</p>
                 </span>
                                 <span>
                   <FontAwesomeIcon icon={faMoneyBill1Wave}/>

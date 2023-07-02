@@ -10,7 +10,7 @@ export default function Sale() {
             <Head>
                 <title>Beschaffung</title>
             </Head>
-            <SidebarLeft selectedIndex={4}/>
+            <SidebarLeft selectedIndex={3}/>
             <HeadSearch/>
 
             <div className="flex flex-col md:flex-row">
