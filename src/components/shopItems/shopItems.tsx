@@ -1,6 +1,6 @@
 import {items} from "@/util/mockedData";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faCartArrowDown, faChevronDown, faFan, faHardDrive, faMicrochip} from "@fortawesome/free-solid-svg-icons";
+import {faCartArrowDown, faChevronDown, faFan, faHardDrive, faMicrochip,} from "@fortawesome/free-solid-svg-icons";
 import {differenceInDays, isBefore} from "date-fns";
 import Countdown from "react-countdown";
 import React, {useCallback, useMemo, useState} from "react";
@@ -28,7 +28,7 @@ type ItemInfo = {
 
 const ShopItems = React.memo(() => {
     const [tileMax, setTileMax] = useState(20);
-    const [expandedItems, setExpandedItems] = useState(['']);
+    const [expandedItems, setExpandedItems] = useState([""]);
 
     let tileCounter: number = 0;
 
@@ -43,67 +43,68 @@ const ShopItems = React.memo(() => {
     }, []);
 
     const renderExpandedInfo = useCallback((item: ItemInfo) => {
-        return (<div className="col-span-6">
-            <div className="p-4">
-                <p className={'pb-1'}>
-                    This is more information about {item.itemTitle}
-                    .
-                </p>
-                {item.moreInfo && (
-                    <div className={'pb-1'}>{item.moreInfo}</div>
-                )}
-                <div className="grid grid-cols-[20%_80%] border-t-8 border-double">
-                    <p className={'border-b'}>Graphics Description: </p>
-                    <p className={'border-b border-dashed'}>{item.graphicsDescription}</p>
-                    <p className={'border-b'}>Ram Size: </p>
-                    <p className={'border-b border-dashed'}> {item.ramSize}</p>
-                    <p className={'border-b'}>Power Adapter Name: </p>
-                    <p className={'border-b border-dashed'}> {item.powerAdapterName}</p>
-                    <p className={'border-b'}>Power Adapter Consumption: </p>
-                    <p className={'border-b border-dashed'}> {item.powerAdapterConsumption}</p>
-                    <p className={'border-b'}>Processor Description: </p>
-                    <p className={'border-b border-dashed'}> {item.processorDescription}</p>
-                    <p>Storage Description: </p>
-                    <p> {item.storageDescription}</p>
+        return (
+            <div className="col-span-6">
+                <div className="p-4">
+                    <p className={"pb-1"}>
+                        This is more information about {item.itemTitle}.
+                    </p>
+                    {item.moreInfo && <div className={"pb-1"}>{item.moreInfo}</div>}
+                    <div className="grid grid-cols-[20%_80%] border-t-8 border-double">
+                        <p className={"border-b"}>Graphics Description: </p>
+                        <p className={"border-b border-dashed"}>
+                            {item.graphicsDescription}
+                        </p>
+                        <p className={"border-b"}>Ram Size: </p>
+                        <p className={"border-b border-dashed"}> {item.ramSize}</p>
+                        <p className={"border-b"}>Power Adapter Name: </p>
+                        <p className={"border-b border-dashed"}>
+                            {" "}
+                            {item.powerAdapterName}
+                        </p>
+                        <p className={"border-b"}>Power Adapter Consumption: </p>
+                        <p className={"border-b border-dashed"}>
+                            {" "}
+                            {item.powerAdapterConsumption}
+                        </p>
+                        <p className={"border-b"}>Processor Description: </p>
+                        <p className={"border-b border-dashed"}>
+                            {" "}
+                            {item.processorDescription}
+                        </p>
+                        <p>Storage Description: </p>
+                        <p> {item.storageDescription}</p>
+                    </div>
                 </div>
             </div>
-        </div>)
+        );
     }, []);
 
     const renderButton = useCallback((itemTitle: string) => {
-        return (<div className={"pt-4"}>
-            <div className={"col-start-2"}>
-                <div className="p-3">
-                    <button
-                        className="bg-gradient-to-tr from-fuchsia-600 to-violet-600 w-full h-8 rounded-md font-semibold"
-                        onClick={() =>
-                            console.log(
-                                "added " + itemTitle + " to cart"
-                            )
-                        }
-                    >
-                        Add{" "}
-                        <FontAwesomeIcon
-                            icon={faCartArrowDown}
-                        />
-                    </button>
-                </div>
-                <div className="p-3">
-                    <div
-                        className="text-center bg-gradient-to-tr from-fuchsia-600 to-violet-600 w-full rounded-md font-semibold h-8 p-px"
-                    >
-                        <div
-                            className="bg-zinc-800 w-full h-full rounded-md py-1"
+        return (
+            <div className={"pt-4"}>
+                <div className={"col-start-2"}>
+                    <div className="p-3">
+                        <button
+                            className="bg-gradient-to-tr from-fuchsia-600 to-violet-600 w-full h-8 rounded-md font-semibold"
+                            onClick={() =>
+                                console.log("added " + itemTitle + " to cart")
+                            }
                         >
-                            More{" "}
-                            <FontAwesomeIcon
-                                icon={faChevronDown}
-                            />
+                            Add <FontAwesomeIcon icon={faCartArrowDown}/>
+                        </button>
+                    </div>
+                    <div className="p-3">
+                        <div
+                            className="text-center bg-gradient-to-tr from-fuchsia-600 to-violet-600 w-full rounded-md font-semibold h-8 p-px">
+                            <div className="bg-zinc-800 w-full h-full rounded-md py-1">
+                                More <FontAwesomeIcon icon={faChevronDown}/>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>)
+        );
     }, []);
 
     const renderNormalInfo = useCallback((item: ItemInfo) => {
@@ -118,7 +119,8 @@ const ShopItems = React.memo(() => {
             itemTitle,
         } = item;
 
-        const daysUntilSale = saleUntil && differenceInDays(new Date(saleUntil), new Date());
+        const daysUntilSale =
+            saleUntil && differenceInDays(new Date(saleUntil), new Date());
         const hasSaleDays = daysUntilSale && daysUntilSale > 1;
         const isSaleUP = saleUntil && isBefore(new Date(), saleUntil);
 
@@ -185,14 +187,18 @@ const ShopItems = React.memo(() => {
                 return (
                     <li className="w-full p-1 py-2" key={item.id}>
                         <div className="relative">
-                            {!item.isAvailable && (
-                                <div
-                                    className="text-xl font-extrabold absolute inset-0 flex items-center justify-center text-white bg-red-950 bg-opacity-60  w-11/12">
-                  <span className="bg-zinc-900 bg-opacity-90 border p-2 rounded-md">
-                    Not available
-                  </span>
-                                </div>
-                            )}
+                            <div
+                                className="text-xl font-extrabold absolute inset-0 flex items-center justify-center text-white bg-red-950 bg-opacity-60  w-11/12"
+                                style={{
+                                    zIndex: 1,
+                                    top: 0,
+                                    display: !item.isAvailable ? "flex" : "none",
+                                }}
+                            >
+              <span className="bg-zinc-900 bg-opacity-90 border p-2 rounded-md">
+                Not available
+              </span>
+                            </div>
                             <div
                                 className="cursor-pointer bg-zinc-800 rounded-md overflow-hidden p-1 shadow-lg grid grid-cols-5 w-11/12"
                                 onClick={() => handleExpandItem(item.id)}
@@ -217,12 +223,24 @@ const ShopItems = React.memo(() => {
                 return null;
             }
         });
-    }, [expandedItems, tileCounter, tileMax, handleExpandItem, renderExpandedInfo, renderButton, renderNormalInfo]);
+    }, [
+        expandedItems,
+        tileCounter,
+        tileMax,
+        handleExpandItem,
+        renderExpandedInfo,
+        renderButton,
+        renderNormalInfo,
+    ]);
 
     return (
         <ul className="p-1.5">
-            {renderedItems}
-            <button onClick={() => setTileMax((prevTileMax) => prevTileMax + 20)}>
+            <div className="grid grid-cols-1 gap-4">
+                {renderedItems}
+            </div>
+            <button
+                onClick={() => setTileMax((prevTileMax) => prevTileMax + 20)}
+            >
                 More
             </button>
         </ul>
