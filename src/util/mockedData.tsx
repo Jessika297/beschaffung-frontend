@@ -52,7 +52,7 @@ export const items: Datenbankschema[] = [
         storageDescription: 'SATA HDD',
         storageType: 'SSD',
         itemTitle: 'Fujitsu Esprimo Q920',
-        isAvailable: true,
+        isAvailable: false,
     },
     {
         graphicsDescription: 'Intel Extreme Graphics 2 - 64 MB VRAM',
