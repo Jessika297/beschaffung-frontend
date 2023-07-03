@@ -5,54 +5,11 @@ import {faFan, faHardDrive, faMicrochip} from "@fortawesome/free-solid-svg-icons
 import {differenceInDays, isBefore} from "date-fns";
 import React, {useState} from "react";
 import Link from "next/link";
+import {ItemInfo} from "@/util/itemType";
 
 interface ItemsProps {
     homepage: boolean;
 }
-
-type ItemInfo = {
-    id: string;
-    name: string;
-    description: string;
-    pictureUrl: string;
-    price: number;
-    isAvailable: boolean;
-    salePrice: number | null;
-    saleUntil: Date | null;
-    gpu: {
-        id: string;
-        name: string;
-        description: string;
-    };
-    ram: {
-        id: string;
-        name: string;
-        description: string;
-        size: string;
-    };
-    psu: {
-        id: string;
-        name: string;
-        consumption: string;
-        description: string;
-    };
-    cpu: {
-        id: string;
-        name: string;
-        description: string;
-    };
-    storage: {
-        id: string;
-        name: string;
-        description: string;
-        size: string;
-    };
-    mainboard: {
-        id: string;
-        name: string;
-        description: string;
-    };
-};
 
 const Items = ({homepage}: ItemsProps) => {
     const [tileMax, setTileMax] = useState(homepage ? 6 : 3);

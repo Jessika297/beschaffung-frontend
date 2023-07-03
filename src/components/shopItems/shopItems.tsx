@@ -5,50 +5,7 @@ import {differenceInDays, isBefore} from "date-fns";
 import Countdown from "react-countdown";
 import React, {useCallback, useMemo, useState} from "react";
 import Link from "next/link";
-
-type ItemInfo = {
-    id: string;
-    name: string;
-    description: string;
-    pictureUrl: string;
-    price: number;
-    isAvailable: boolean;
-    salePrice: number | null;
-    saleUntil: Date | null;
-    gpu: {
-        id: string;
-        name: string;
-        description: string;
-    };
-    ram: {
-        id: string;
-        name: string;
-        description: string;
-        size: string;
-    };
-    psu: {
-        id: string;
-        name: string;
-        consumption: string;
-        description: string;
-    };
-    cpu: {
-        id: string;
-        name: string;
-        description: string;
-    };
-    storage: {
-        id: string;
-        name: string;
-        description: string;
-        size: string;
-    };
-    mainboard: {
-        id: string;
-        name: string;
-        description: string;
-    };
-};
+import {ItemInfo} from "@/util/itemType";
 
 const ShopItems = React.memo(() => {
     const [tileMax, setTileMax] = useState(20);
@@ -103,7 +60,8 @@ const ShopItems = React.memo(() => {
                             {" "}
                             {item.psu.name}
                         </p>
-                        <p className={"border-b"}>Power Adapter Consumption: </p>
+                        <p className={"border-b"}>Power Adapter
+                            Consumption: </p>
                         <p className={"border-b border-dashed"}>
                             {" "}
                             {item.psu.consumption}
@@ -113,7 +71,7 @@ const ShopItems = React.memo(() => {
                             {" "}
                             {item.cpu.description}
                         </p>
-                        <p>Storage Description: </p>
+                        <p id={`list${item.id}`}>Storage Description: </p>
                         <p> {item.storage.description}</p>
                     </div>
                 </div>
@@ -121,7 +79,7 @@ const ShopItems = React.memo(() => {
         );
     }, []);
 
-    const renderButton = useCallback((id: string) => {
+    const renderButton = useCallback((id: string, isExpanded: boolean) => {
         return (
             <div className={"pt-1"}>
                 <div className={"col-start-2"}>
@@ -147,7 +105,7 @@ const ShopItems = React.memo(() => {
                         <div
                             className="text-center bg-gradient-to-tr from-fuchsia-600 to-violet-600 w-full rounded-md font-semibold h-8 p-px"
                         >
-                            <div id={`list${id}`}
+                            <div id={isExpanded ? 'expanded' : `list${id}`}
                                  className="bg-zinc-800 w-full h-full rounded-md py-1">
                                 More <FontAwesomeIcon icon={faChevronDown}/>
                             </div>
@@ -231,6 +189,8 @@ const ShopItems = React.memo(() => {
         return items.map((item: ItemInfo) => {
             const isExpanded = expandedItems.includes(item.id);
             const listItem = item.id == '1' ? '' : '/#list' + String(Number(item.id) - 1)
+            const listItemID = item.id == '1' ? '0' : String(Number(item.id) - 1)
+            const isAboveExpanded = expandedItems.includes(listItemID);
 
             if (tileCounter < tileMax) {
                 tileCounter++;
@@ -251,7 +211,7 @@ const ShopItems = React.memo(() => {
               </span>
                             </div>
                             <Link href={`/market` + listItem}
-                                  className="cursor-pointer bg-zinc-800 rounded-md overflow-hidden p-1 shadow-lg grid grid-cols-5 w-11/12"
+                                  className={`cursor-pointer bg-zinc-800 rounded-md overflow-hidden p-1 shadow-lg grid grid-cols-5 w-11/12`}
                                   onClick={() => handleExpandItem(item.id)}
                             >
                                 <div
@@ -264,7 +224,7 @@ const ShopItems = React.memo(() => {
                                     />
                                 </div>
                                 {renderNormalInfo(item)}
-                                {renderButton(item.id)}
+                                {renderButton(item.id, isExpanded)}
                                 {isExpanded && renderExpandedInfo(item)}
                             </Link>
                         </div>
