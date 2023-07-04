@@ -16,7 +16,7 @@ export default function Sale() {
             <div className="flex flex-col md:flex-row">
                 <div className="w-48 hidden lg:block shrink-0"/>
                 <div className=" grow ">
-                    <Items homepage={false}/>
+                    <Items/>
                 </div>
                 <SidebarRight/>
             </div>
