@@ -110,7 +110,7 @@ const Services = () => {
                     return null;
                 }
             })}
-            <button onClick={() => setTileMax(tileMax + 3)}>More</button>
+            <button className={'hidden'} onClick={() => setTileMax(tileMax + 3)}>More</button>
         </ul>
     );
 };
