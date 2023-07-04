@@ -84,9 +84,6 @@ const Services = () => {
                                         className="absolute grid grid-cols-2 left-1/2 -translate-x-1/2 bottom-2  w-5/6 bg-white rounded-md items-center bg-opacity-30 backdrop-blur-md">
                                         <span
                                             className={'col-span-2 font-extrabold p-2 text-zinc-700 bg-white rounded bg-opacity-60'}>{service.title}</span>
-                                        <div className="p-3 col-span-2">
-                                            <h3 className="font-bold text-red-700">Click below for more Information</h3>
-                                        </div>
                                         <div className="p-3">
                                             <div
                                                 className={'text-center font-bold py-1 bg-gradient-to-tr from-fuchsia-600 to-violet-600 rounded-md w-20'}>MORE
