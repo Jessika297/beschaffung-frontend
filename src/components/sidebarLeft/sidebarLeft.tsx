@@ -41,8 +41,6 @@ const SidebarLeft: React.FC<SidebarLeftProps> = ({selectedIndex}) => {
         "market",
         "dashboard",
         "service",
-        "sale",
-        "wallet",
         "settings",
         "imprint",
     ];

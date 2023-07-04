@@ -4,10 +4,8 @@ import {
     faBellConcierge,
     faCircleInfo,
     faGear,
-    faGift,
     faHouse,
     faStore,
-    faWallet,
     faXmark
 } from '@fortawesome/free-solid-svg-icons';
 import {ReactElement} from "react";
@@ -497,8 +495,6 @@ export const Icons: IconInterface = {
     market: <FontAwesomeIcon icon={faStore}/>,
     dashboard: <FontAwesomeIcon icon={faHouse}/>,
     service: <FontAwesomeIcon icon={faBellConcierge}/>,
-    sale: <FontAwesomeIcon icon={faGift}/>,
-    wallet: <FontAwesomeIcon icon={faWallet}/>,
     settings: <FontAwesomeIcon icon={faGear}/>,
     imprint: <FontAwesomeIcon icon={faCircleInfo}/>,
     logout: <FontAwesomeIcon icon={faArrowRightFromBracket}/>,

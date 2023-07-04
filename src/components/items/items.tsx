@@ -8,6 +8,7 @@ import {
     faHandHoldingMedical,
     faRecycle
 } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
 
 const services = [
     {
@@ -85,9 +86,9 @@ const Services = () => {
                                         <span
                                             className={'col-span-2 font-extrabold p-2 text-zinc-700 bg-white rounded bg-opacity-60'}>{service.title}</span>
                                         <div className="p-3">
-                                            <div
-                                                className={'text-center font-bold py-1 bg-gradient-to-tr from-fuchsia-600 to-violet-600 rounded-md w-20'}>MORE
-                                            </div>
+                                            <Link href={'/service/#' + service.title}
+                                                  className={'text-center font-bold p-2 py-1 bg-gradient-to-tr from-fuchsia-600 to-violet-600 rounded-md w-20'}>MORE
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
@@ -107,7 +108,7 @@ const Services = () => {
                     return null;
                 }
             })}
-            <button className={'hidden'} onClick={() => setTileMax(tileMax + 3)}>More</button>
+            <button className={'text-center'} onClick={() => setTileMax(tileMax + 3)}>{'More ->'}</button>
         </ul>
     );
 };

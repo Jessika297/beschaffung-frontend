@@ -19,54 +19,54 @@ const services = [
         image: "/recycling.jpg",
         title: "Recycling",
         icon: <FontAwesomeIcon icon={faRecycle}/>,
-        textFirst: "Partner",
-        textSecond: "[Partner Company Name]",
-        expanded: "recycling is great",
+        textFirst: "Our Partner recycling services are available for you.",
+        textSecond: "Stadtreinigung Hamburg",
+        expanded: "Your drop-off points for bulky waste, green waste, recyclables, and hazardous materials are our recycling centers. You can also get rid of hazardous materials through our Mobile Hazardous Waste Collection. Many items can be dropped off for free at the recycling centers.",
         index: 0,
     },
     {
         image: "/maintenance.jpg",
         title: "Maintenance",
         icon: <FontAwesomeIcon icon={faHandHoldingMedical}/>,
-        textFirst: "Duration",
-        textSecond: "[Included Services]",
-        expanded: "maintenance is great",
+        textFirst: "We offer a standard maintenance time for 1 Year",
+        textSecond: "Hotline, repairing, all Problems",
+        expanded: "You can get extra Maintenance time for 2, 5 or 10 Years.",
         index: 1,
     },
     {
         image: "/peripherals.jpg",
         title: "Peripherals",
         icon: <FontAwesomeIcon icon={faComputerMouse}/>,
-        textFirst: "Equipment",
-        textSecond: "[Price] €",
-        expanded: "peripherals are great",
+        textFirst: "Get the new Asus ROG Strix XG49VQ Monitor 49 Zoll",
+        textSecond: "Get 10% off with every purchase of a PC + Mouse + Keyboard",
+        expanded: "Just put the items in your cart and we will send you an offer, where you can see the discount",
         index: 2,
     },
     {
         image: "/dataRecovery.jpg",
         title: "Data Recovery",
         icon: <FontAwesomeIcon icon={faBackward}/>,
-        textFirst: "Partner",
-        textSecond: "[Partner Company Name]",
-        expanded: "recovery is great",
+        textFirst: "Lost your data? We got you covered!",
+        textSecond: "Heisen's Data Recovery Service",
+        expanded: "Mybe just safe the data better next time",
         index: 3,
     },
     {
         image: "/installation.jpg",
         title: "Installation",
         icon: <FontAwesomeIcon icon={faDownload}/>,
-        textFirst: "Software",
-        textSecond: "[Variation]",
-        expanded: "installation is great",
+        textFirst: "We can install the Software you need",
+        textSecond: "Make your PC a Plug and Work",
+        expanded: "Just put the Installation in your cart and list the needed software, we will send you an offer, don't worry we will discuss this point again in the future, so every detail is clear",
         index: 4,
     },
     {
         image: "/warranty.jpg",
         title: "Warranty",
         icon: <FontAwesomeIcon icon={faHandHoldingHand}/>,
-        textFirst: "Duration",
-        textSecond: "[Included]",
-        expanded: "warranty is great",
+        textFirst: "Standard warranty for 5 Years",
+        textSecond: "You can book different warranty services",
+        expanded: "Get our own warranty services",
         index: 5,
     },
 ];
@@ -86,10 +86,10 @@ const Service = () => {
             <div className="flex flex-col md:flex-row">
                 <div className="w-48 hidden lg:block shrink-0"/>
                 <div className="grow">
-                    <h2 className="text-2xl font-semibold mb-4">Our Extra Services</h2>
+                    <h2 className="text-2xl font-semibold my-4">Our Extra Services</h2>
                     <ul className="grid grid-cols-1 gap-4">
                         {services.map((service) => (
-                            <li key={service.index}>
+                            <li id={service.title}>
                                 <div
                                     className="block bg-zinc-800 rounded-md w-full overflow-hidden pb-4 shadow-lg cursor-pointer"
                                     onClick={() => handleServiceClick(service.index)}
@@ -107,7 +107,7 @@ const Service = () => {
                                                 className="text-right font-extrabold p-2 text-zinc-700 bg-white rounded-r-md bg-opacity-60">
                         {service.icon}
                       </span>
-                                            <div className="p-3">
+                                            <div className="p-3 col-span-2">
                                                 <>
                                                     <h3 className="font-bold text-red-700">{service.textFirst}</h3>
                                                     <span className="text-red-700 font-semibold">
@@ -133,7 +133,8 @@ const Service = () => {
                   </span>
                                 </div>
                                 {expandedService === service.index && (
-                                    <div className="mt-2">{service.expanded}</div>
+                                    <div
+                                        className="p-3 bg-zinc-800 rounded-b-md border-t">{service.expanded}</div>
                                 )}
                             </li>
                         ))}

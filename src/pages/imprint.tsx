@@ -1,23 +1,23 @@
-import SidebarRight from "@/components/sidebarRight/sidebarRight";
-import SidebarLeft from "@/components/sidebarLeft/sidebarLeft";
+import Head from "next/head";
 import HeadSearch from "@/components/headSearch/headSearch";
+import SidebarLeft from "@/components/sidebarLeft/sidebarLeft";
+import Imprint from "@/imprint/imprint";
 
-export default function Imprint() {
+export default function Sale() {
     return (
         <>
+            <Head>
+                <title>Beschaffung</title>
+            </Head>
             <SidebarLeft selectedIndex={6}/>
             <HeadSearch/>
 
-            <div className="flex flex-col md:flex-row">
+            <div className="flex flex-col md:flex-row md:mr-28">
                 <div className="w-48 hidden lg:block shrink-0"/>
-                <div className="w-1/2 text-center mt-3">
-                    Herr Kraut <br/>
-                    Frau Rüben <br/>
-                    Dr GmbH
+                <div className=" grow ">
+                    <Imprint/>
                 </div>
-                <div className={'w-1/2 text-center mt-3'}>Kraut und Rüben GmbH</div>
-                <SidebarRight/>
             </div>
         </>
-    );
+    )
 }

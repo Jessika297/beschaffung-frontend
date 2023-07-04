@@ -1,5 +1,5 @@
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faBars, faCartArrowDown, faChevronDown, faMagnifyingGlass, faXmark} from "@fortawesome/free-solid-svg-icons";
+import {faBars, faChevronDown, faMagnifyingGlass, faXmark} from "@fortawesome/free-solid-svg-icons";
 import {useState} from "react";
 import MobileMenu from "@/components/mobileMenu/mobileMenu";
 import Link from "next/link";
@@ -17,12 +17,6 @@ export default function HeadSearch() {
     const renderProfileMenu = () => {
         return (
             <div className="flex items-center order-2 md:order-3 pl-0 md:pl-3 relative">
-                <Link href="/wallet" className="py-2 flex items-center text-zinc-500">
-                        <span
-                            className="bg-zinc-800 w-8 h-8 grid place-items-center mr-2 rounded-md active:border active:text-white">
-                            <FontAwesomeIcon icon={faCartArrowDown}/>
-                        </span>
-                </Link>
                 <img src="/img.png" alt="user" className="w-10 h-10 rounded-full ml-4"/>
                 <button
                     className="h-7 w-7 ml-4 active:border rounded-md"
