@@ -43,11 +43,9 @@ const MobileMenu: React.FC<{
     const menuItems = [
         "market",
         "dashboard",
-        "favourites",
         "service",
-        "sale",
-        "wallet",
         "settings",
+        "imprint",
         "logout",
         "close",
     ];

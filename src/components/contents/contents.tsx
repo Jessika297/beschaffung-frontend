@@ -12,7 +12,7 @@ export default function Contents() {
             <div className="p-3">
                 <div
                     className={`w-full rounded-md bg-center bg-cover flex flex-col justify-center px-4 ${
-                        expanded ? ' h-64' : 'h-40 overflow-hidden'
+                        expanded ? ' h-64' : 'h-48 overflow-hidden'
                     }`}
                     style={{
                         backgroundImage: 'url(/techHexagon.jpg)',
@@ -20,8 +20,8 @@ export default function Contents() {
                 >
                     <h1 className="text-2xl font-bold px-3 mt-3">OUR GOAL</h1>
                     <h2
-                        className={`px-3 py-1 mt-2 text-xl text-black font-bold bg-white bg-opacity-50 rounded-md${
-                            expanded ? 'max-h-full' : 'max-h-16 overflow-hidden'
+                        className={`md:px-3 px-1 py-1 mt-2 text-xl text-black font-bold bg-white bg-opacity-50 rounded-md ${
+                            expanded ? 'max-h-full' : 'md:max-h-16 max-h-40 overflow-hidden'
                         }`}
                     >
                         Here at <span

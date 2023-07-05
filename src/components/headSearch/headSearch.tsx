@@ -34,17 +34,18 @@ export default function HeadSearch() {
                     }`}
                 >
                     <Link href={'/settings'}
-                          className="text-sm py-2 px-3 font-medium text-gray-600 cursor-pointer hover:bg-slate-100">
+                          className="text-center text-sm border-b py-2 px-3 font-medium text-gray-600 cursor-pointer hover:bg-slate-100">
                         Profile Settings
                     </Link>
-                    <Link href={'/wallet'}
-                          className="text-sm py-2 px-3 font-medium text-gray-600 cursor-pointer hover:bg-slate-100">
-                        Shopping cart
-                    </Link>
                     <Link href={'/'}
-                          className="text-sm py-2 px-3 font-medium text-gray-600 cursor-pointer hover:bg-slate-100"
+                          className="text-center text-sm border-b py-2 px-3 font-medium text-gray-600 cursor-pointer hover:bg-slate-100"
                           onClick={handleLogout}>Logout
                     </Link>
+                    <button
+                        className="text-sm py-2 px-3 font-medium text-gray-600 cursor-pointer hover:bg-slate-100"
+                        onClick={() => setIsProfileMenuSelected(false)}>
+                        Close
+                    </button>
                 </div>
             </div>
         )
