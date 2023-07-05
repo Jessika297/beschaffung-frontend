@@ -75,7 +75,7 @@ export default function ShopItems({items}: any) {
         const {gpu, price, cpu, storage, name} = item;
 
         return (
-            <div className="col-span-3 p-3 grid grid-cols-2">
+            <div className="col-span-3 p-3 grid grid-cols-[70%_30%]">
                 <h3 className="font-extrabold text-lg mb-2 col-span-2">{item.name}</h3>
                 <div>
                     <div>
@@ -98,7 +98,7 @@ export default function ShopItems({items}: any) {
                 </div>
                 <div>
                     <h3 className="font-semibold">Price</h3>
-                    <span className={`decoration-1`}>{item.price / 100} €</span>
+                    <span className={`decoration-1`}>{item.price} €</span>
                 </div>
             </div>
         );
@@ -119,7 +119,7 @@ export default function ShopItems({items}: any) {
                                 style={{
                                     zIndex: 1,
                                     top: 0,
-                                    display: !items.isAvailable ? "none" : "none",
+                                    display: !items.isAvailable ? "flex" : "none",
                                     //was flex
                                 }}
                             >

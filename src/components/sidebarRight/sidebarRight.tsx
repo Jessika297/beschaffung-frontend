@@ -39,13 +39,16 @@ export default function SidebarRight() {
                 ))}
             </ul>
             <div
-                className="w-full rounded-md bg-gradient-to-tr from-fuchsia-600 to-violet-600 mt-3 p-3 relative overflow-hidden">
+                className="w-full rounded-md bg-zinc-700 mt-3 p-3 relative overflow-hidden">
                 <div className="z-10 relative">
-                    <h2 className="text-white font-semibold">Get our full Service</h2>
-                    <p className="text-white/50 text-sm mt-1">We recycle your hardware after it's expanded.</p>
-                    <button className="bg-white w-full rounded-md h-12 text-gray-900 font-semibold mt-2">
-                        <Link href={'/service'}>Get the deal</Link>
-                    </button>
+                    <h2 className="text-white font-semibold">Get our special Deals</h2>
+                    <p className="text-white/50 text-sm mt-1">We have a lot of items</p>
+                    <Link href="/market">
+                        <div
+                            className="text-center font-bold py-2 bg-gradient-to-tr from-fuchsia-600 to-violet-600 rounded-md w-44 mt-3">
+                            Explore Now
+                        </div>
+                    </Link>
                 </div>
             </div>
         </div>
