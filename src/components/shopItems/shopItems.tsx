@@ -1,6 +1,7 @@
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faChevronDown, faFan, faHardDrive, faMicrochip} from "@fortawesome/free-solid-svg-icons";
 import React, {useCallback, useMemo, useState} from "react";
+import {Datenbankschema} from "@/util/mockedData";
 
 export default function ShopItems({items}: any) {
     const [tileMax, setTileMax] = useState(20);
@@ -38,10 +39,17 @@ export default function ShopItems({items}: any) {
                         <p className={"border-b border-dashed"}>
                             {item.psu.consumption}
                         </p>
+                        <p className={"border-b"}>Mainboard: </p>
+                        <p className={"border-b border-dashed"}>
+                            {item.mainboard.name}
+                        </p>
                         <p className={"border-b"}>Processor Description: </p>
                         <p className={"border-b border-dashed"}> {item.cpu.description}</p>
                         <p id={`list${item.id}`}>Storage Description: </p>
                         <p> {item.storage.description}</p>
+                        <p className={"border-b"}>Mainboard Description: </p>
+                        <p className={"border-b border-dashed"}> {item.mainboard.description}</p>
+
                     </div>
                 </div>
             </div>

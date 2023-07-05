@@ -10,7 +10,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import {ReactElement} from "react";
 
-interface Datenbankschema {
+export interface Datenbankschema {
     id: string;
     name: string;
     description: string;
