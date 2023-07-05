@@ -5,8 +5,6 @@ export type ItemInfo = {
     pictureUrl: string;
     price: number;
     isAvailable: boolean;
-    salePrice: number | null;
-    saleUntil: Date | null;
     gpu: {
         id: string;
         name: string;

@@ -1,10 +1,8 @@
-import {items} from "@/util/mockedData";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faChevronDown, faFan, faHardDrive, faMicrochip} from "@fortawesome/free-solid-svg-icons";
 import React, {useCallback, useMemo, useState} from "react";
-import {ItemInfo} from "@/util/itemType";
 
-const ShopItems = React.memo(() => {
+export default function ShopItems({items}: any) {
     const [tileMax, setTileMax] = useState(20);
     const [expandedItems, setExpandedItems] = useState([""]);
     let tileCounter = 0;
@@ -19,7 +17,7 @@ const ShopItems = React.memo(() => {
         });
     }, []);
 
-    const renderExpandedInfo = useCallback((item: ItemInfo) => {
+    const renderExpandedInfo = useCallback((item: Datenbankschema) => {
         return (
             <div className="col-span-6">
                 <div className="p-4">
@@ -73,54 +71,56 @@ const ShopItems = React.memo(() => {
         );
     }, []);
 
-    const renderNormalInfo = useCallback((item: ItemInfo) => {
-        const {gpu, price, cpu, salePrice, saleUntil, storage, name} = item;
+    const renderNormalInfo = useCallback((item: Datenbankschema) => {
+        const {gpu, price, cpu, storage, name} = item;
 
         return (
             <div className="col-span-3 p-3 grid grid-cols-2">
-                <h3 className="font-extrabold text-lg mb-2 col-span-2">{name}</h3>
+                <h3 className="font-extrabold text-lg mb-2 col-span-2">{item.name}</h3>
                 <div>
                     <div>
                         <FontAwesomeIcon icon={faMicrochip}/>
-                        <span className="ml-2 text-zinc-400">{gpu.name}</span>
+                        <span className="ml-2 text-zinc-400">{item.gpu?.name ? item.gpu.name : ''}</span>
                     </div>
                     <div>
                         <FontAwesomeIcon icon={faHardDrive}/>
-                        <span className="ml-2 text-zinc-400" title={storage.name}>
-              {storage.size} GB
+                        <span className="ml-2 text-zinc-400" title={item.storage.name}>
+              {item.storage.size} GB
             </span>
                     </div>
                     <div>
                         <FontAwesomeIcon icon={faFan}/>
-                        <span className="ml-2 text-zinc-400" title={storage.description}>
-              {gpu.name}
+                        <span className="ml-2 text-zinc-400"
+                              title={item.storage.description ? item.storage.description : ''}>
+              {item.gpu?.name}
             </span>
                     </div>
                 </div>
                 <div>
                     <h3 className="font-semibold">Price</h3>
-                    <span className={`decoration-1`}>{price} €</span>
+                    <span className={`decoration-1`}>{item.price} €</span>
                 </div>
             </div>
         );
     }, []);
 
     const renderedItems = useMemo(() => {
-        return items.map((item) => {
-            const isExpanded = expandedItems.includes(item.id);
+        return items.map((items: Datenbankschema) => {
+            const isExpanded = expandedItems.includes(items.id);
 
             if (tileCounter < tileMax) {
                 tileCounter++;
 
                 return (
-                    <li className="w-full p-1 py-2" key={item.id}>
+                    <li className="w-full p-1 py-2" key={items.id}>
                         <div className="relative">
                             <div
                                 className="text-xl font-extrabold absolute inset-0 flex items-center justify-center text-white bg-red-950 bg-opacity-60"
                                 style={{
                                     zIndex: 1,
                                     top: 0,
-                                    display: !item.isAvailable ? "flex" : "none",
+                                    display: !items.isAvailable ? "none" : "none",
+                                    //was flex
                                 }}
                             >
                 <span className="bg-zinc-900 bg-opacity-90 border p-2 rounded-md">
@@ -129,7 +129,7 @@ const ShopItems = React.memo(() => {
                             </div>
                             <div
                                 className="cursor-pointer bg-zinc-800 rounded-md overflow-hidden p-1 shadow-lg grid grid-cols-[40%_60%]"
-                                onClick={() => handleExpandItem(item.id)}
+                                onClick={() => handleExpandItem(items.id)}
                                 style={{display: "grid"}}
                             >
                                 <div
@@ -142,7 +142,7 @@ const ShopItems = React.memo(() => {
                                     }}
                                 >
                                     <img
-                                        src={item.pictureUrl}
+                                        src={items.pictureUrl}
                                         alt="Bild"
                                         style={{
                                             width: "100%",
@@ -153,10 +153,10 @@ const ShopItems = React.memo(() => {
                                     />
                                 </div>
                                 <div>
-                                    {renderNormalInfo(item)}
-                                    {renderButton(item.id, isExpanded)}
+                                    {renderNormalInfo(items)}
+                                    {renderButton(items.id, isExpanded)}
                                 </div>
-                                <div className={"col-span-2"}>{isExpanded && renderExpandedInfo(item)}</div>
+                                <div className={"col-span-2"}>{isExpanded && renderExpandedInfo(items)}</div>
                             </div>
                         </div>
                     </li>
@@ -165,15 +165,7 @@ const ShopItems = React.memo(() => {
                 return null;
             }
         });
-    }, [
-        expandedItems,
-        tileCounter,
-        tileMax,
-        handleExpandItem,
-        renderExpandedInfo,
-        renderButton,
-        renderNormalInfo,
-    ]);
+    }, [items, expandedItems, tileCounter, tileMax, handleExpandItem, renderNormalInfo, renderButton, renderExpandedInfo]);
 
     return (
         <ul className="p-1.5">
@@ -181,6 +173,5 @@ const ShopItems = React.memo(() => {
             <button onClick={() => setTileMax((prevTileMax) => prevTileMax + 20)}>More</button>
         </ul>
     );
-});
+};
 
-export default ShopItems;

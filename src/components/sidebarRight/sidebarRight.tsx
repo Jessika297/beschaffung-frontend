@@ -31,7 +31,7 @@ export default function SidebarRight() {
                 </span>
                                 <span>
                   <FontAwesomeIcon icon={faMoneyBill1Wave}/>
-                  <p className="text-sm text-zinc-400">{item.salePrice ? item.salePrice : item.price} €</p>
+                  <p className="text-sm text-zinc-400">{item.price} €</p>
                 </span>
                             </div>
                         </div>

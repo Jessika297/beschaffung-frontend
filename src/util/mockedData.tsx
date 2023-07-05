@@ -16,9 +16,6 @@ interface Datenbankschema {
     description: string;
     pictureUrl: string;
     price: number;
-    isAvailable: boolean;
-    salePrice: number | null;
-    saleUntil: Date | null;
     gpu: {
         id: string;
         name: string;
@@ -52,6 +49,7 @@ interface Datenbankschema {
         name: string;
         description: string;
     };
+    isAvailable: boolean;
 }
 
 export const items: Datenbankschema[] = [
@@ -61,9 +59,6 @@ export const items: Datenbankschema[] = [
         description: 'best PC ever',
         pictureUrl: '/one.png',
         price: 139,
-        isAvailable: false,
-        salePrice: 122,
-        saleUntil: new Date(2023, 6, 5),
         gpu: {
             id: '1',
             name: 'Intel',
@@ -97,6 +92,7 @@ export const items: Datenbankschema[] = [
             name: 'Mainboard',
             description: 'Fujitsu Esprimo Q920 Mainboard',
         },
+        isAvailable: false,
     },
     {
         id: '2',
@@ -104,9 +100,6 @@ export const items: Datenbankschema[] = [
         description: 'In äußerst leichtem und kompaktem Design vereint das edel anmutende Gerät Funktionalität und Performance eines großformatigen Notebooks auf kleinstem Raum.',
         pictureUrl: '/two.png',
         price: 5,
-        isAvailable: true,
-        salePrice: 0,
-        saleUntil: new Date(2023, 7, 1),
         gpu: {
             id: '2',
             name: 'Intel',
@@ -140,6 +133,7 @@ export const items: Datenbankschema[] = [
             name: 'Mainboard',
             description: 'Toshiba Libretto U100 Mainboard',
         },
+        isAvailable: true,
     },
     {
         id: '3',
@@ -147,9 +141,6 @@ export const items: Datenbankschema[] = [
         description: 'jupp auch nur ein Gehäuse',
         pictureUrl: '/three.png',
         price: 899,
-        isAvailable: true,
-        salePrice: 799,
-        saleUntil: new Date(2023, 6, 10),
         gpu: {
             id: '3',
             name: 'NVIDIA®',
@@ -183,6 +174,7 @@ export const items: Datenbankschema[] = [
             name: 'Mainboard',
             description: 'Chieftec LG-01B-OP Mainboard',
         },
+        isAvailable: true,
     },
     {
         id: '4',
@@ -190,9 +182,6 @@ export const items: Datenbankschema[] = [
         description: 'Der MiniAir 11 Mini-PC bietet zuverlässige Leistung und ultrakompaktes Design für eine Vielzahl von Anwendungen wie tägliche Arbeit, Online-Lernen, Heimgebrauch und mehr.',
         pictureUrl: '/four.png',
         price: 299,
-        isAvailable: true,
-        salePrice: 159,
-        saleUntil: new Date(2023, 6, 11),
         gpu: {
             id: '4',
             name: 'Intel®UHD-Grafik',
@@ -226,6 +215,7 @@ export const items: Datenbankschema[] = [
             name: 'Mainboard',
             description: 'GEEKOM MiniAir 11 Mainboard',
         },
+        isAvailable: true,
     },
     {
         id: '5',
@@ -233,9 +223,6 @@ export const items: Datenbankschema[] = [
         description: 'das ist eigentlich nur ein gehäuse, ist aber fancy',
         pictureUrl: '/five.png',
         price: 259,
-        isAvailable: true,
-        salePrice: null,
-        saleUntil: null,
         gpu: {
             id: '5',
             name: 'NVIDIA®',
@@ -269,6 +256,7 @@ export const items: Datenbankschema[] = [
             name: 'Mainboard',
             description: 'AZZA Pyramid 804 Mainboard',
         },
+        isAvailable: true,
     },
     {
         id: '6',
@@ -276,9 +264,6 @@ export const items: Datenbankschema[] = [
         description: 'Unsere interne Architektur unterstützt mehr Power und höhere Wattleistung. Von der Anordnung der Kühlungskomponenten, der Neupositionierung der Grafikkarte bis zum Layout der UDIMM-Steckplätze – wir haben alles getan, damit Geschwindigkeit, Performance und Gameplay an erster Stelle stehen.',
         pictureUrl: '/six.png',
         price: 2099,
-        isAvailable: true,
-        salePrice: 1799,
-        saleUntil: new Date(2023, 7, 1),
         gpu: {
             id: '6',
             name: 'NVIDIA®',
@@ -312,6 +297,7 @@ export const items: Datenbankschema[] = [
             name: 'Mainboard',
             description: 'Alienware Aurora R15 Mainboard',
         },
+        isAvailable: true,
     },
     {
         id: '7',
@@ -319,9 +305,6 @@ export const items: Datenbankschema[] = [
         description: 'Der perfekte Desktop-PC für produktives Arbeiten, flüssiges Gaming und beeindruckende Unterhaltung.',
         pictureUrl: '/seven.png',
         price: 799,
-        isAvailable: true,
-        salePrice: null,
-        saleUntil: null,
         gpu: {
             id: '7',
             name: 'NVIDIA®',
@@ -355,6 +338,7 @@ export const items: Datenbankschema[] = [
             name: 'Mainboard',
             description: 'HP Pavilion TP01-1006ng Mainboard',
         },
+        isAvailable: true,
     },
     {
         id: '8',
@@ -362,9 +346,6 @@ export const items: Datenbankschema[] = [
         description: 'Der kompakte und leistungsstarke Mini-PC ASUS PN62-BB3006MD kombiniert die neueste AMD Ryzen 5 4500U Mobile Prozessor (CPU) Technologie mit einem eleganten und kompakten Design.',
         pictureUrl: '/eight.png',
         price: 899,
-        isAvailable: true,
-        salePrice: null,
-        saleUntil: null,
         gpu: {
             id: '8',
             name: 'AMD Radeon',
@@ -398,6 +379,7 @@ export const items: Datenbankschema[] = [
             name: 'Mainboard',
             description: 'ASUS PN62-BB3006MD Mainboard',
         },
+        isAvailable: true,
     },
     {
         id: '9',
@@ -405,9 +387,6 @@ export const items: Datenbankschema[] = [
         description: 'Hochleistungs-PC für anspruchsvolle Aufgaben wie Videobearbeitung und 3D-Modellierung.',
         pictureUrl: '/nine.png',
         price: 1799,
-        isAvailable: true,
-        salePrice: 1599,
-        saleUntil: new Date(2023, 6, 8),
         gpu: {
             id: '9',
             name: 'AMD Radeon',
@@ -441,6 +420,7 @@ export const items: Datenbankschema[] = [
             name: 'MSI MEG Trident X Mainboard',
             description: 'Mainboard for MSI MEG Trident X',
         },
+        isAvailable: true,
     },
     {
         id: '10',
@@ -448,9 +428,6 @@ export const items: Datenbankschema[] = [
         description: 'Kompakter und kostengünstiger PC für grundlegende Aufgaben wie Internet-Browsing und Textverarbeitung.',
         pictureUrl: '/ten.png',
         price: 299,
-        isAvailable: true,
-        salePrice: null,
-        saleUntil: null,
         gpu: {
             id: '10',
             name: 'Intel®',
@@ -484,6 +461,7 @@ export const items: Datenbankschema[] = [
             name: 'Lenovo IdeaCentre Mini 5i Mainboard',
             description: 'Mainboard for Lenovo IdeaCentre Mini 5i',
         },
+        isAvailable: true,
     }
 ];
 
