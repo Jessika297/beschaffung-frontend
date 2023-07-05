@@ -80,7 +80,7 @@ export default function ShopItems({items}: any) {
                 <div>
                     <div>
                         <FontAwesomeIcon icon={faMicrochip}/>
-                        <span className="ml-2 text-zinc-400">{item.gpu?.name ? item.gpu.name : ''}</span>
+                        <span className="ml-2 text-zinc-400">{item.cpu?.name ? item.cpu.name : ''}</span>
                     </div>
                     <div>
                         <FontAwesomeIcon icon={faHardDrive}/>
@@ -98,7 +98,7 @@ export default function ShopItems({items}: any) {
                 </div>
                 <div>
                     <h3 className="font-semibold">Price</h3>
-                    <span className={`decoration-1`}>{item.price} €</span>
+                    <span className={`decoration-1`}>{item.price / 100} €</span>
                 </div>
             </div>
         );
