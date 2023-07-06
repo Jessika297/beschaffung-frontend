@@ -1,7 +1,7 @@
 import Head from "next/head";
 import HeadSearch from "@/components/headSearch/headSearch";
 import SidebarLeft from "@/components/sidebarLeft/sidebarLeft";
-import Imprint from "@/imprint/imprint";
+import Imprint from "@/components/imprint/imprint";
 
 export default function Sale() {
     return (
